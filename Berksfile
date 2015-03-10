@@ -14,3 +14,5 @@ cookbook 'cara',    path: "./cookbooks/cara"
 cookbook 'test',    path: "./cookbooks/test"
 cookbook 'localAnt',path: "./cookbooks/localAnt"
 cookbook 'base',    path: "./cookbooks/base"
+cookbook 'nervios',    path: "./cookbooks/nervios"
+cookbook 'apache2', '~> 3.0.1'
