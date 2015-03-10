@@ -64,7 +64,7 @@ Vagrant.configure(2) do |config|
     
   end
   
-  ###############################################################################
+###############################################################################
 ###################################    manos02   ##############################
 ###############################################################################
 
@@ -72,10 +72,10 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "manos02" do | manos02 |
       manos02.vm.host_name            ="manos02.calavera.biz"
-      manos02.vm.network              "private_network", ip: "192.168.33.41"
-      manos02.vm.network              "forwarded_port", guest: 22, host: 2241, auto_correct: true
-      manos02.vm.network              "forwarded_port", guest: 80, host: 8041
-      manos02.vm.network              "forwarded_port", guest: 8080, host: 8141
+      manos02.vm.network              "private_network", ip: "192.168.33.42"
+      manos02.vm.network              "forwarded_port", guest: 22, host: 2242, auto_correct: true
+      manos02.vm.network              "forwarded_port", guest: 80, host: 8042
+      manos02.vm.network              "forwarded_port", guest: 8080, host: 8142
 
       manos02.ssh.forward_agent        =true
 
@@ -100,10 +100,10 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "nervios02" do | nervios02 |
     nervios02.vm.host_name              ="nervios02.calavera.biz"
-    nervios02.vm.network                 "private_network", ip: "192.168.33.51"
-    nervios02.vm.network                 "forwarded_port", guest: 22, host: 2251, auto_correct: true
-    nervios02.vm.network                 "forwarded_port", guest: 80, host: 8051
-    nervios02.vm.network                 "forwarded_port", guest: 8080, host: 8151
+    nervios02.vm.network                 "private_network", ip: "192.168.33.52"
+    nervios02.vm.network                 "forwarded_port", guest: 22, host: 2252, auto_correct: true
+    nervios02.vm.network                 "forwarded_port", guest: 80, host: 8052
+    nervios02.vm.network                 "forwarded_port", guest: 8080, host: 8152
 
     nervios02.ssh.forward_agent        =true
 
@@ -128,10 +128,10 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "manos03" do | manos03 |
       manos03.vm.host_name            ="manos03.calavera.biz"
-      manos03.vm.network              "private_network", ip: "192.168.33.41"
-      manos03.vm.network              "forwarded_port", guest: 22, host: 2241, auto_correct: true
-      manos03.vm.network              "forwarded_port", guest: 80, host: 8041
-      manos03.vm.network              "forwarded_port", guest: 8080, host: 8141
+      manos03.vm.network              "private_network", ip: "192.168.33.43"
+      manos03.vm.network              "forwarded_port", guest: 22, host: 2243, auto_correct: true
+      manos03.vm.network              "forwarded_port", guest: 80, host: 8043
+      manos03.vm.network              "forwarded_port", guest: 8080, host: 8143
 
       manos03.ssh.forward_agent        =true
 
@@ -156,10 +156,10 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "nervios03" do | nervios03 |
     nervios03.vm.host_name              ="nervios03.calavera.biz"
-    nervios03.vm.network                 "private_network", ip: "192.168.33.51"
-    nervios03.vm.network                 "forwarded_port", guest: 22, host: 2251, auto_correct: true
-    nervios03.vm.network                 "forwarded_port", guest: 80, host: 8051
-    nervios03.vm.network                 "forwarded_port", guest: 8080, host: 8151
+    nervios03.vm.network                 "private_network", ip: "192.168.33.53"
+    nervios03.vm.network                 "forwarded_port", guest: 22, host: 2253, auto_correct: true
+    nervios03.vm.network                 "forwarded_port", guest: 80, host: 8053
+    nervios03.vm.network                 "forwarded_port", guest: 8080, host: 8153
 
     nervios03.ssh.forward_agent        =true
 
@@ -184,10 +184,10 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "manos04" do | manos04 |
       manos04.vm.host_name            ="manos04.calavera.biz"
-      manos04.vm.network              "private_network", ip: "192.168.33.41"
-      manos04.vm.network              "forwarded_port", guest: 22, host: 2241, auto_correct: true
-      manos04.vm.network              "forwarded_port", guest: 80, host: 8041
-      manos04.vm.network              "forwarded_port", guest: 8080, host: 8141
+      manos04.vm.network              "private_network", ip: "192.168.33.44"
+      manos04.vm.network              "forwarded_port", guest: 22, host: 2244, auto_correct: true
+      manos04.vm.network              "forwarded_port", guest: 80, host: 8044
+      manos04.vm.network              "forwarded_port", guest: 8080, host: 8144
 
       manos04.ssh.forward_agent        =true
 
@@ -212,10 +212,10 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "nervios04" do | nervios04 |
     nervios04.vm.host_name              ="nervios04.calavera.biz"
-    nervios04.vm.network                 "private_network", ip: "192.168.33.51"
-    nervios04.vm.network                 "forwarded_port", guest: 22, host: 2251, auto_correct: true
-    nervios04.vm.network                 "forwarded_port", guest: 80, host: 8051
-    nervios04.vm.network                 "forwarded_port", guest: 8080, host: 8151
+    nervios04.vm.network                 "private_network", ip: "192.168.33.54"
+    nervios04.vm.network                 "forwarded_port", guest: 22, host: 2254, auto_correct: true
+    nervios04.vm.network                 "forwarded_port", guest: 80, host: 8054
+    nervios04.vm.network                 "forwarded_port", guest: 8080, host: 8154
 
     nervios04.ssh.forward_agent        =true
 
