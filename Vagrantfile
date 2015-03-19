@@ -232,6 +232,62 @@ Vagrant.configure(2) do |config|
     
   end
   
+  ###############################################################################
+###################################    manos05   ##############################
+###############################################################################
+
+# replace last 2 digits as appropriate
+
+    config.vm.define "manos05" do | manos05 |
+      manos05.vm.host_name            ="manos05.calavera.biz"
+      manos05.vm.network              "private_network", ip: "192.168.33.45"
+      manos05.vm.network              "forwarded_port", guest: 22, host: 2245, auto_correct: true
+      manos05.vm.network              "forwarded_port", guest: 80, host: 8045
+      manos05.vm.network              "forwarded_port", guest: 8080, host: 8145
+
+      manos05.ssh.forward_agent        =true
+
+      manos05.vm.synced_folder        ".",         "/home/manos05"
+      manos05.vm.synced_folder        "./shared", "/mnt/shared"
+
+      manos05.vm.provision :chef_zero do |chef|
+        chef.cookbooks_path         = ["./cookbooks/"]
+        chef.add_recipe             "git::default"
+        chef.add_recipe             "localAnt::default"
+        chef.add_recipe             "java7::default"   # for some reason the Java recipe must be re-run to install Tomcat
+        chef.add_recipe             "tomcat::default"
+        chef.add_recipe             "shared::_junit"
+        chef.add_recipe             "manos::solo"  # no remote git interaction
+      end
+    end
+
+###############################################################################
+###################################    nervios05     ##############################
+###############################################################################
+# monitoring
+
+  config.vm.define "nervios05" do | nervios05 |
+    nervios05.vm.host_name              ="nervios05.calavera.biz"
+    nervios05.vm.network                 "private_network", ip: "192.168.33.55"
+    nervios05.vm.network                 "forwarded_port", guest: 22, host: 2255, auto_correct: true
+    nervios05.vm.network                 "forwarded_port", guest: 80, host: 8055
+    nervios05.vm.network                 "forwarded_port", guest: 8080, host: 8155
+
+    nervios05.ssh.forward_agent        =true
+
+    nervios05.vm.synced_folder         ".", "/home/nervios05"
+    nervios05.vm.synced_folder         "./shared", "/mnt/shared"
+
+
+    nervios05.vm.provision :chef_zero do |chef|
+      chef.cookbooks_path =       ["./cookbooks/"]
+      #chef.add_recipe             "nervios::LAMP"
+    end
+    
+    nervios05.vm.provision       :shell, path: "./cookbooks/nervios/files/tmpLAMP.sh"
+    
+  end
+  
   
   
   
