@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ apt-get update --fix-missing
  apt-get -y install apache2
  debconf-set-selections <<< 'mysql-server mysql-server/root_password password  '
  debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password  '
